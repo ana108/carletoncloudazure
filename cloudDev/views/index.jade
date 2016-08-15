@@ -1,0 +1,86 @@
+extends layout
+head content
+        title="Cloud Today"
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+        script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js')
+        script(src='paging.js')
+        script.
+           $(document).ready(function(){
+                      $('#demo').paging({limit:15});
+                                  });
+block content
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+  script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js')
+  script(src='javascripts/paging.js')
+  script.
+           $(document).ready(function(){
+                      $('#demo').paging({limit:35});
+                                  });
+  h1 #{title}
+  p System Information
+  div
+    |Platform: #{info.os}
+    |Name of Server: #{info.host}
+    br
+    |Date Snapshot: #{info.date}
+    br
+    |Current Directory: #{info.currentDirectory}
+    br
+    |IP Address: #{info.ip}
+  div
+    table(id="demo")
+      tbody
+          - for(var i=5; i<info.listFiles.length-5; i = i+5){
+              tr
+                td #{info.listFiles[i-4].name}
+                td #{info.listFiles[i-3].name}
+                td #{info.listFiles[i-2].name}
+                td #{info.listFiles[i-1].name}
+                td #{info.listFiles[i].name}
+          - }
+
+  p Information about processes currently running right now
+  ul
+    each x in httpd.p
+      li #{x}
+
+  p HTTPD Variables
+  ul
+    each y in info.httpd
+      li #{y}
+
+  p Content of the httpd.conf file
+  | #{info.confData}
+  
+  p List of users currently logged in: 
+  ul
+    each a in info.openFile
+      li #{a}
+  p The default permissions assigned to new files
+  | #{info.umask}
+  
+  p The value of selinux  security: Enforced, Permissive and Disabled are the three options
+  | #{info.sestatus}
+
+  p Environment Variables for Current User
+  ul
+    each d in info.env
+      li #{d}
+
+  p List of all ports currently in use
+  ul
+    each e in info.ports
+      li #{e}
+
+  p Contents of auth.log
+  | #{info.sysLogs} 
+
+  p Contents of last logins
+  ul
+    each f in info.lastlog
+      li #{f} 
+
+  p Logins of remote users
+    each g in info.remoteLogin
+      li #{g}	
