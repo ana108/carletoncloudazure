@@ -25,11 +25,8 @@ function index(req, res) {
 	//sendPage();	
 	//mySystem.proc();
 	//mySystem.processRead();
-	var stuffBSD = "ps -e -o pid, uname, comm";
-	var stuff = "ps -A -o pid,uname,uid,comm";
-	systemStats.listFiles = mySystem.proc();
+	var stuff = "tasklist";
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
-								//systemStats.p = thisData;
 								if(thisData.indexOf('ERR') > 0){
 									
 								}
