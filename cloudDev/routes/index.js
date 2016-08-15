@@ -17,7 +17,7 @@ function index(req, res) {
 		systemStats.currentDirectory = tempObject.currentDirectory;
 		systemStats.ip = tempObject.ip;
 		systemStats.ports = listPorts();
-		systemLogs();
+		//systemLogs();
 		sendPage();
 	});
 	systemStats.date = new Date();
