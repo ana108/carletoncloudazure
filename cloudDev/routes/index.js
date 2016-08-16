@@ -26,9 +26,11 @@ function index(req, res) {
 	//mySystem.proc();
 	//mySystem.processRead();
 	var stuff = "tasklist";
+	console.log("Executing task list...");
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
+								console.log("finished executing tasklist");
 								if(thisData.indexOf('ERR') > 0){
-									
+									console.log(thisData);
 								}
 								httpd.p = thisData;
 								getHTTPD();// had to link it because otherwise the two calls interfere with each other.

@@ -63,6 +63,7 @@ function readContentsHome(){
 		exec(myInfo, function(err, stdout, stderr) 
 			 {
 				if(err){
+					console.log(myInfo + " command failed");
 					var finding = err.message.split(deliminator); 
 					if(finding.length > 1){
 						finding.pop();
@@ -80,6 +81,7 @@ function readContentsHome(){
 					callback(data);
 					   }
 				else{
+					console.log(myInfo + " command succeeded");
 					var stuff = stdout.split(deliminator); 
 					if(stuff.length > 1){
 						stuff.pop();
