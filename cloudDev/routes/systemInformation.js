@@ -104,6 +104,7 @@ function readContentsHome(){
 					callback(data);
 				  }
 				if(stderr){
+					console.log("Standard output error");
 					data.push(stderr);
 					callback(data);
 					  }
