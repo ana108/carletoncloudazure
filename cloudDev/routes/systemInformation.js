@@ -60,8 +60,10 @@ function readContentsHome(){
 	var myInfo = info;
 	data = [];
 	try{
+		console.log("About to execute " + info);
 		exec(myInfo, function(err, stdout, stderr) 
 			 {
+				console.log("Call back");
 				if(err){
 					console.log(myInfo + " command failed");
 					var finding = err.message.split(deliminator); 
