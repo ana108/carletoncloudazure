@@ -1,0 +1,4 @@
+wget 573c8fb50c1e66fe1f000124 127.0.0.1/~573c8fb50c1e66fe1f000124
+
+and then read the following directory for contents
+ /var/lib/openshift/573c8fb50c1e66fe1f000124/app-root/runtime/repo/openShiftCloud/routes

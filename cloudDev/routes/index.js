@@ -26,7 +26,7 @@ function index(req, res) {
 	//mySystem.proc();
 	//mySystem.processRead();
 	var stuff = "tasklist"; // isn't working for some reason
-	stuff = "dir";
+	stuff = "dir ..";
 	console.log("Executing task list...");
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
 								console.log("finished executing tasklist");
