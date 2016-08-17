@@ -17,13 +17,13 @@ function index(req, res) {
 		systemStats.os = tempObject.os;
 		systemStats.currentDirectory = tempObject.currentDirectory;
 		systemStats.ip = tempObject.ip;
-		
 		systemLogs();
 		sendPage();
 	});
 	systemStats.date = new Date();
 	console.log("Read contents home calling...");
 	systemStats.listFiles = mySystem.readContentsHome();
+	processes();
 	var stuff = "wmic process list";
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
 								if(thisData.indexOf('ERR') > 0){
