@@ -91,8 +91,6 @@ function users(req, res) {
 	sending += "</table>"
 	res.send(sending);
     
-};
-	res.render('unownedFiles', { title: 'Security on the Cloud', info: files});
 }
 
 router.get('/', index);
