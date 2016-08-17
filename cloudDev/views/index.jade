@@ -28,6 +28,17 @@ block content
     |Current Directory: #{info.currentDirectory}
     br
     |IP Address: #{info.ip}
+div
+    table(id="demo")
+      tbody
+          - for(var i=5; i<info.listFiles.length-5; i = i+5){
+              tr
+                td #{info.listFiles[i-4].name}
+                td #{info.listFiles[i-3].name}
+                td #{info.listFiles[i-2].name}
+                td #{info.listFiles[i-1].name}
+                td #{info.listFiles[i].name}
+          - }
 
   p Information about processes currently running right now
   ul
