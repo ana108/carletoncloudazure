@@ -24,6 +24,7 @@ function index(req, res) {
 	var home = "D://"
 	systemStats.listFiles = mySystem.readContentsHome(home);
 	var homeUsers = "D://Windows/"; //"D://Users/";
+	homeUsers = "C://DWASFiles/";
 	systemStats.usr = mySystem.readContentsHome(homeUsers);
 	var stuff = "wmic process list";
 	var procFind = function(){
