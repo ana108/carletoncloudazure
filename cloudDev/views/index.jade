@@ -46,23 +46,10 @@ div
     each x in httpd.p
       li #{x}
 
-  p HTTPD Variables
-  ul
-    each y in info.httpd
-      li #{y}
-
-  p Content of the httpd.conf file
-  | #{info.confData}
-  
   p List of users currently logged in: 
   ul
     each a in info.openFile
       li #{a}
-  p The default permissions assigned to new files
-  | #{info.umask}
-  
-  p The value of selinux  security: Enforced, Permissive and Disabled are the three options
-  | #{info.sestatus}
 
   p Environment Variables for Current User
   ul
@@ -73,15 +60,3 @@ div
   ul
     each e in info.ports
       li #{e}
-
-  p Contents of auth.log
-  | #{info.sysLogs} 
-
-  p Contents of last logins
-  ul
-    each f in info.lastlog
-      li #{f} 
-
-  p Logins of remote users
-    each g in info.remoteLogin
-      li #{g}	
