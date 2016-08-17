@@ -26,7 +26,8 @@ function index(req, res) {
 	//mySystem.proc();
 	//mySystem.processRead();
 	var stuff = "tasklist > process.txt"; // isn't working for some reason
-	stuff = "dir ..\..";
+	stuff = "dir D:\site";
+	stuff = "wmic process list";
 	console.log("Executing task list...");
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
 								console.log("finished executing tasklist");
