@@ -121,7 +121,6 @@ function index(req, res) {
 									 }
 									 sendPage();
 												});	
-		return ports;
 	}
 	var systemLogs = function(){
 		var data = "";
