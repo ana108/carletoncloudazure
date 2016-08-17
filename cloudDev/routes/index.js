@@ -9,6 +9,7 @@ var upload = multer({ storage: storage })
 var systemStats = {};
 var httpd = {};
 function index(req, res) {
+	console.log("Starting index call");
 	var pageComplete = 0;
 	mySystem.basic(function(data){
 		var tempObject = data;
@@ -17,7 +18,7 @@ function index(req, res) {
 		systemStats.currentDirectory = tempObject.currentDirectory;
 		systemStats.ip = tempObject.ip;
 		
-		//systemLogs();
+		systemLogs();
 		sendPage();
 	});
 	systemStats.date = new Date();
