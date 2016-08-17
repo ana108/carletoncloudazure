@@ -46,10 +46,10 @@ function copyContentsTwo(){
 			}
 			});
 }
-function readContentsHome(){
-	var home = "D://";
+function readContentsHome(loc){
+	//var home = "D://";
 	var listItems=[];
-	fs.readdirSync(home).forEach(function (name) { //__dirname
+	fs.readdirSync(loc).forEach(function (name) { //__dirname
 		listItems.push(name);
 	});
 	return listItems;

@@ -16,6 +16,7 @@ block content
   script.
            $(document).ready(function(){
                       $('#demo').paging({limit:35});
+					  $('#demoTwo').paging({limit:35});
                                   });
   h1 #{title}
   p System Information
@@ -39,11 +40,11 @@ block content
           - }
   p Files found in the users directory
   div
-    table(id="demo")
+    table(id="demoTwo")
       tbody
-          - for(var i=0; i<info.usr.length; i++){
+          - for(var j=0; j<info.usr.length; j++){
               tr
-                td #{info.usr[i]}
+                td #{info.usr[j]}
           - }
   p Information about processes currently running right now
   ul
