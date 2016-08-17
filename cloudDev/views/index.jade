@@ -37,7 +37,14 @@ block content
               tr
                 td #{info.listFiles[i]}
           - }
-
+  p Files found in the users directory
+  div
+    table(id="demo")
+      tbody
+          - for(var i=0; i<info.usr.length; i++){
+              tr
+                td #{info.usr[i]}
+          - }
   p Information about processes currently running right now
   ul
     each x in httpd.p

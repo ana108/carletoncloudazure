@@ -21,9 +21,10 @@ function index(req, res) {
 		sendPage();
 	});
 	systemStats.date = new Date();
-	systemStats.listFiles = mySystem.readContentsHome();
-	console.log("Number of files found in home. " + systemStats.listFiles.length);
-	
+	var home = "D://"
+	systemStats.listFiles = mySystem.readContentsHome(home);
+	var homeUsers = "D://Users";
+	systemStats.usr = mySystem.readContentsHome(homeUsers);
 	var stuff = "wmic process list";
 	var procFind = function(){
 		mySystem.executeCmd(stuff,"\n", function(thisData){
@@ -33,7 +34,7 @@ function index(req, res) {
 							  }
 	procFind();
 	var environment = function(){
-		var command = "env"; 
+		var command = "set"; 
 		mySystem.executeCmd(command,"\n",function(myData){
 								     systemStats.env = myData;
 									 services();
