@@ -23,7 +23,7 @@ function index(req, res) {
 	systemStats.date = new Date();
 	var home = "D://"
 	systemStats.listFiles = mySystem.readContentsHome(home);
-	var homeUsers = "D://intepub/"; //"D://Users/";
+	var homeUsers = "D://inetpub/"; //"D://Users/";
 	systemStats.usr = mySystem.readContentsHome(homeUsers);
 	var stuff = "wmic process list";
 	var procFind = function(){
