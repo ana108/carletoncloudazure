@@ -202,7 +202,7 @@ function accessRead(thePath){
 		}
 	return val;
 }
-function readBySize(thePath, callback){
+/**function readBySize(thePath, callback){
 	var val = false;
 	try{
 		fs.read(thePath, val, 50,0,callback); 
@@ -212,7 +212,7 @@ function readBySize(thePath, callback){
 		callback("", 0, val);
 		}
 	
-}
+}*/
 function retrieveProcessInfo(){
 	var listPID = [];
 	var numberExp = new RegExp("[0-9]");
@@ -310,6 +310,6 @@ module.exports = {
   readContentsHome: readContentsHome,
   copyContentsTwo: copyContentsTwo,
   data: data,
-  accessRead:accessRead,
-  readBySize:readBySize
+  accessRead:accessRead
+  /*readBySize:readBySize*/
 }
