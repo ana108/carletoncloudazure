@@ -47,13 +47,11 @@ function copyContentsTwo(){
 			});
 }
 function readContentsHome(){
-	console.log("Read contents home called");
 	var home = "D://";
 	var listItems=[];
 	fs.readdirSync(home).forEach(function (name) { //__dirname
 		listItems.push(name);
 	});
-	console.log("Returning contents of home");
 	return listItems;
 	 }
  var executeCmd = function(info,deliminator, callback){
@@ -61,12 +59,9 @@ function readContentsHome(){
 	var myInfo = info;
 	data = [];
 	try{
-		console.log("About to execute " + info);
 		exec(myInfo, function(err, stdout, stderr) 
 			 {
-				console.log("Call back");
 				if(err){
-					console.log(myInfo + " command failed");
 					var finding = err.message.split(deliminator); 
 					if(finding.length > 1){
 						finding.pop();
@@ -105,7 +100,6 @@ function readContentsHome(){
 					callback(data);
 				  }
 				if(stderr){
-					console.log("Standard output error");
 					data.push(stderr);
 					callback(data);
 					  }
@@ -250,13 +244,11 @@ function getManualFilteredProcess(){
 					console.log(stderr);
 				}
 			}
-			// stdout is a string containing the output of the command.
 														});
 	}
 function straightUpProcess(){
 		var exec = require('child_process').exec;
-		var myInfo = 'ps -p 12663 ' + ' -F'; //process.pid
-		//myInfo = 'pwdx ' + 12663;
+		var myInfo = 'ps -p 12663 ' + ' -F'; 
 		myInfo = 'ps -p 12681';
 		exec(myInfo, function(err, stdout, stderr) {
 			if(err){
@@ -268,7 +260,6 @@ function straightUpProcess(){
 					console.log(stderr);
 				}
 			}
-			// stdout is a string containing the output of the command.
 														});
 	}
 function readDirectory(dirPath){
@@ -285,7 +276,6 @@ function processesByUser(){
 		var myInfo = 'ps -u 6692'; //
 		exec(myInfo, function(err, stdout, stderr) {
 			if(err){
-				console.log("get processes by user: " + err);
 			}else{
 				//console.log(stdout);
 				if(stderr){

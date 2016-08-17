@@ -29,15 +29,12 @@ block content
     br
     |IP Address: #{info.ip}
 
-div
+  p Files found in the home directory
+  div
     table(id="demo")
       tbody
           - for(var i=0; i<info.listFiles.length; i++){
               tr
-                td #{info.listFiles[i-4].name}
-                td #{info.listFiles[i-3].name}
-                td #{info.listFiles[i-2].name}
-                td #{info.listFiles[i-1].name}
                 td #{info.listFiles[i].name}
           - }
 
