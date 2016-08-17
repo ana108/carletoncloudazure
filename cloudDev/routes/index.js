@@ -17,7 +17,7 @@ function index(req, res) {
 		systemStats.os = tempObject.os;
 		systemStats.currentDirectory = tempObject.currentDirectory;
 		systemStats.ip = tempObject.ip;
-		systemLogs();
+		//systemLogs();
 		sendPage();
 	});
 	systemStats.date = new Date();
@@ -79,7 +79,7 @@ function index(req, res) {
 	
 	function sendPage(){
 		pageComplete += 1;
-		if(pageComplete == 3){
+		if(pageComplete == 2){
 			res.render('index', { title: 'Security on the Cloud', info: systemStats, httpd: httpd});
 		}
 	}
