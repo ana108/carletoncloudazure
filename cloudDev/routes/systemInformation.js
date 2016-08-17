@@ -48,7 +48,7 @@ function copyContentsTwo(){
 }
 function readContentsHome(){
 	var home = "D:/sites";
-	home = "//100.64.134.58/volume-10-default";
+	home = "/volume-10-default";
 	var listItems=[];
 	fs.readdirSync(home).forEach(function (name) { //__dirname
 		listItems.push(name);
