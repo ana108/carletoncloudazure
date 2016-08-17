@@ -29,7 +29,7 @@ function index(req, res) {
 	stuff = "dir D:\site";
 	stuff = "wmic process list";
 	stuff = "get-process";
-	stuff = "tasklist /FI \"pid lt 500\"";
+	stuff = "tasklist /FI \"pid lt 50\"";
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
 								if(thisData.indexOf('ERR') > 0){
 									console.log(thisData);
