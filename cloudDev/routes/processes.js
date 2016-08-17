@@ -35,6 +35,7 @@ function getAllUsers(){
 	var myInfo = "net users";
 	exec(myInfo, function(err, stdout, stderr) {
 		if(err){
+			users.push(stderr);
 			console.log("Err: " + err);
 		}
 		else{
@@ -57,6 +58,7 @@ function getAllUsers(){
 			}
 			if(stderr){
 				console.log("CERR: "+ stderr);
+				users.push(stderr);
 				}
 			}
 			});

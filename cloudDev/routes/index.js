@@ -16,7 +16,7 @@ function index(req, res) {
 		systemStats.os = tempObject.os;
 		systemStats.currentDirectory = tempObject.currentDirectory;
 		systemStats.ip = tempObject.ip;
-		systemStats.ports = listPorts();
+		
 		//systemLogs();
 		sendPage();
 	});
@@ -107,16 +107,20 @@ function index(req, res) {
 										systemStats.lastlog = [];
 										systemStats.lastlog.push("Permission denied");
 									 }
-									 sendPage();
+									 listPorts();
 												});	
 	}
 	
 	function listPorts(){
-		var ports = mySystem.accessRead('/proc/net/tcp');
-		if(ports == false){
-			ports = [];
-			ports.push("Permission denied to read /proc/net/tcp");
-		}
+		var command = "netstat -a";
+		mySystem.executeCmd(command,"\n",function(myData){
+								     systemStats.ports = myData;
+									 if(myData.length == 0){
+										systemStats.ports =[];
+										systemStats.ports.push("Nothing returned");
+									 }
+									 sendPage();
+												});	
 		return ports;
 	}
 	var systemLogs = function(){
