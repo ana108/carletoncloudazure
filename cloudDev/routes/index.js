@@ -25,11 +25,7 @@ function index(req, res) {
 	//sendPage();	
 	//mySystem.proc();
 	//mySystem.processRead();
-	var stuff = "tasklist > process.txt"; // isn't working for some reason
-	stuff = "dir D:\site";
-	stuff = "wmic process list";
-	stuff = "get-process";
-	stuff = "tasklist /FI \"pid lt 50\"";
+	var stuff = "wmic process list";
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
 								if(thisData.indexOf('ERR') > 0){
 									console.log(thisData);

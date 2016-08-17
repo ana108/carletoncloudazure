@@ -32,8 +32,7 @@ function retrieveProcessInfo(){
 }
 function getAllUsers(){
 	var exec = require('child_process').exec;
-	//var myInfo = 'awk -F: \'($3 >= 1000) {printf \"%s:%s\\n\",$1,$3}\' /etc/passwd';
-	var myInfo = 'awk -F: \'($3 >= 1000 && $3 < 65534) {printf \"%s:%s:%s\\n\",$1,$3,$6}\' /etc/passwd';
+	var myInfo = "net users";
 	exec(myInfo, function(err, stdout, stderr) {
 		if(err){
 			console.log("Err: " + err);
