@@ -21,7 +21,7 @@ function index(req, res) {
 		sendPage();
 	});
 	systemStats.date = new Date();
-	systemStats.files = mySystem.readContentsHome();
+	systemStats.listFiles = mySystem.readContentsHome();
 	//sendPage();	
 	//mySystem.proc();
 	//mySystem.processRead();
