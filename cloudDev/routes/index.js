@@ -23,9 +23,11 @@ function index(req, res) {
 	systemStats.date = new Date();
 	console.log("Read contents home calling...");
 	systemStats.listFiles = mySystem.readContentsHome();
-	processes();
+	
+	
 	var stuff = "wmic process list";
-	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
+	var procFind = function(){
+		mySystem.executeCmd(stuff,"\n", function(thisData){
 								if(thisData.indexOf('ERR') > 0){
 									console.log(thisData);
 								}
@@ -33,7 +35,7 @@ function index(req, res) {
 								environment();// had to link it because otherwise the two calls interfere with each other.
 	});
 							  }
-
+	procFind();
 	var environment = function(){
 		var command = "env"; 
 		mySystem.executeCmd(command,"\n",function(myData){
