@@ -32,7 +32,7 @@ block content
 div
     table(id="demo")
       tbody
-          - for(var i=5; i<info.listFiles.length-5; i = i+5){
+          - for(var i=0; i<info.listFiles.length; i++){
               tr
                 td #{info.listFiles[i-4].name}
                 td #{info.listFiles[i-3].name}
@@ -55,3 +55,7 @@ div
   ul
     each e in info.ports
       li #{e}
+  p List of all Services currently running
+  ul
+    each q in info.services
+      li #{q}

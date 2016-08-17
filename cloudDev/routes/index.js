@@ -28,10 +28,7 @@ function index(req, res) {
 	var stuff = "wmic process list";
 	var procFind = function(){
 		mySystem.executeCmd(stuff,"\n", function(thisData){
-								if(thisData.indexOf('ERR') > 0){
-									console.log(thisData);
-								}
-								httpd.p = thisData;
+								httpd.p = thisData;	
 								environment();// had to link it because otherwise the two calls interfere with each other.
 	});
 							  }
@@ -40,10 +37,17 @@ function index(req, res) {
 		var command = "env"; 
 		mySystem.executeCmd(command,"\n",function(myData){
 								     systemStats.env = myData;
-									 listPorts();
+									 services();
 												});	
 	}
 	
+	var services = function(){
+		var command = "sc queryex type= service state= all"; 
+		mySystem.executeCmd(command,"\n",function(myData){
+								     systemStats.services = myData;
+									 listPorts();
+												});	
+	}
 	function listPorts(){
 		var command = "netstat -a";
 		mySystem.executeCmd(command,"\n",function(myData){
