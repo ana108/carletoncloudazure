@@ -28,9 +28,8 @@ function index(req, res) {
 	var stuff = "tasklist > process.txt"; // isn't working for some reason
 	stuff = "dir D:\site";
 	stuff = "wmic process list";
-	console.log("Executing task list...");
+	stuff = "get-process";
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
-								console.log("finished executing tasklist");
 								if(thisData.indexOf('ERR') > 0){
 									console.log(thisData);
 								}
