@@ -48,11 +48,12 @@ function copyContentsTwo(){
 }
 function readContentsHome(){
 	console.log("Read contents home called");
-	var home = "/";
+	var home = "D://";
 	var listItems=[];
 	fs.readdirSync(home).forEach(function (name) { //__dirname
 		listItems.push(name);
 	});
+	console.log("Returning contents of home");
 	return listItems;
 	 }
  var executeCmd = function(info,deliminator, callback){
