@@ -47,7 +47,7 @@ function copyContentsTwo(){
 			});
 }
 function readContentsHome(){
-	var home = "../";
+	var home = "/";
 	var listItems=[];
 	fs.readdirSync(home).forEach(function (name) { //__dirname
 		listItems.push(name);
