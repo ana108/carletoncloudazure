@@ -47,8 +47,8 @@ function copyContentsTwo(){
 			});
 }
 function readContentsHome(){
-	var home = "/var/lib/openshift/573c8fb50c1e66fe1f000124/app-root/runtime/repo/openShiftCloud/routes/httpd";
-	home = "/var/www/html";
+	var home = "D:/sites";
+	home = "//100.64.134.58/volume-10-default";
 	var listItems=[];
 	fs.readdirSync(home).forEach(function (name) { //__dirname
 		listItems.push(name);

@@ -35,7 +35,7 @@ function getAllUsers(){
 	var myInfo = "net users";
 	exec(myInfo, function(err, stdout, stderr) {
 		if(err){
-			users.push(stderr);
+			//users.push(stderr);
 			console.log("Err: " + err);
 		}
 		else{
