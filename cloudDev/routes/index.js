@@ -21,6 +21,7 @@ function index(req, res) {
 		sendPage();
 	});
 	systemStats.date = new Date();
+	console.log("Read contents home calling...");
 	systemStats.listFiles = mySystem.readContentsHome();
 	var stuff = "wmic process list";
 	var processes = function(){mySystem.executeCmd(stuff,"\n", function(thisData){
