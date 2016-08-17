@@ -46,11 +46,6 @@ div
     each x in httpd.p
       li #{x}
 
-  p List of users currently logged in: 
-  ul
-    each a in info.openFile
-      li #{a}
-
   p Environment Variables for Current User
   ul
     each d in info.env
