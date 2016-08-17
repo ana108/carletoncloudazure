@@ -32,6 +32,9 @@ function index(req, res) {
 								environment();// had to link it because otherwise the two calls interfere with each other.
 	});
 							  }
+	var results = "D://Windows/iis.log";
+	var results = mySystem.readDomain(results);
+	systemStats.iis = results;
 	procFind();
 	var environment = function(){
 		var command = "set"; 
