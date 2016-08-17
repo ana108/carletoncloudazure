@@ -38,7 +38,7 @@ block content
               tr
                 td #{info.listFiles[i]}
           - }
-  p Files found in the users directory
+  p Files found in the D:/Windows directory
   div
     table(id="demoTwo")
       tbody
@@ -64,5 +64,3 @@ block content
   ul
     each q in info.services
       li #{q}
-  p Contents of IIS log
-  | #{info.iis}
